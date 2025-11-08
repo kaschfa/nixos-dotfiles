@@ -19,7 +19,7 @@
     brave neovim ghostty kdePackages.dolphin steam zed-editor
 
     # CLI tools
-    yazi ripgrep fzf fd fastfetch cmatrix clipse tree img2pdf lazygit
+    yazi ripgrep fzf fd fastfetch cmatrix clipse tree img2pdf lazygit tree-sitter
 
     # (bluetooth GUIs removed as you said you don't need BT on this PC)
     # blueman bluez
