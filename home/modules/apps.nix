@@ -12,16 +12,16 @@
       text = ''exec "${pkgs.nix-search-tv.src}/nixpkgs.sh" "$@"'';
     })
 
-    # Wayland / Hyprland companions
-    hyprlock hypridle swaybg wlogout wofi pywal swaynotificationcenter waybar
-
     # Desktop apps
-    brave neovim ghostty kdePackages.dolphin steam zed-editor
+    neovim ghostty doublecmd steam zed-editor
 
     # CLI tools
-    yazi ripgrep fzf fd fastfetch cmatrix clipse tree img2pdf lazygit tree-sitter tmux
+    ripgrep fzf fd fastfetch cmatrix clipse tree img2pdf lazygit tree-sitter tmux
+    nh
 
     # (bluetooth GUIs removed as you said you don't need BT on this PC)
     # blueman bluez
   ];
+
+  programs.yazi.enable = true;
 }

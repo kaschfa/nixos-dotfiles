@@ -3,9 +3,17 @@
 
 {
   # Hyprland compositor at the system layer (user configs live in Home Manager)
-  programs.hyprland = {
+  programs.niri.enable = true;
+  
+  services.displayManager.sddm = {
     enable = true;
-    xwayland.enable = true;
+    wayland.enable = true;
+    settings = {
+      Autologin = {
+        User = "fabian";
+        Session = "niri-session";
+      };
+    };
   };
 
   # Portals: screen share, file pickers, etc. needed for Wayland desktops
@@ -13,12 +21,11 @@
     enable = true;
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-gnome
     ];
   };
 
-  # PAM target for hyprlock (actual app is installed via Home Manager)
-  security.pam.services.hyprlock = {};
+  security.polkit.enable = true;
 
   # Common Wayland-friendly environment hints (safe to keep; remove if undesired)
   environment.sessionVariables = {
@@ -28,4 +35,14 @@
     QT_QPA_PLATFORM = "wayland";     # Qt apps on Wayland
     # WLR_NO_HARDWARE_CURSORS = "1"; # uncomment only if you see cursor glitches
   };
+
+  environment.systemPackages = with pkgs; [
+    xwayland-satellite
+    swaybg 
+    wlogout 
+    fuzzel 
+    ironbar 
+    gnome-keyring
+  ];
+
 }

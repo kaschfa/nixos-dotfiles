@@ -15,5 +15,5 @@
   environment.shells = [ pkgs.zsh ];
 
   # Keep your current TTY autologin (unchanged behavior)
-  services.getty.autologinUser = "fabian";
+  # services.getty.autologinUser = "fabian";
 }

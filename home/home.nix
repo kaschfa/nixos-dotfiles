@@ -11,5 +11,7 @@
       ./modules/dotfiles.nix
       ./modules/gaming.nix
       ./modules/git.nix
+      ./modules/services.nix
+      ./modules/dev.nix
     ];
 }
